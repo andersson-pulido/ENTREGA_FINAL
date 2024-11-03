@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Ahorcado</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin-top: 50px;
+        }
+        #letras-adivinadas, #letras-incorrectas {
+            font-size: 24px;
+            letter-spacing: 5px;
+        }
+        #intentos {
+            font-size: 20px;
+            color: red;
+        }
+        #tiempo {
+            font-size: 20px;
+            color: blue;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .ganaste {
+            color: green;
+            font-size: 24px;
+        }
+        .perdiste {
+            color: red;
+            font-size: 24px;
+        }
+        .oculto {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>¡Juego de Ahorcado!</h1>
+
+    <div id="ingreso-palabra">
+        <p>Administrador: ingresa la palabra secreta para el juego:</p>
+        <input type="text" id="palabra-secreta" placeholder="Palabra secreta" />
+        <button id="iniciar-juego">Iniciar Juego</button>
+    </div>
+
+    <div id="seccion-juego" class="oculto">
+        <p id="instrucciones">Adivina la palabra, letra por letra:</p>
+
+        <div id="letras-adivinadas">_ _ _ _ _</div>
+
+        <input type="text" id="letra-input" maxlength="1" placeholder="Ingresa una letra" />
+        <button id="hacer-intento">Intentar</button>
+
+        <p>Letras incorrectas: <span id="letras-incorrectas"></span></p>
+        <p>Intentos restantes: <span id="intentos">6</span></p>
+        <p id="tiempo">Tiempo: 5:00</p>
+        <p id="resultado"></p>
+    </div>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
